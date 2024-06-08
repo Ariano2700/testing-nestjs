@@ -71,3 +71,58 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+
+## Install nestjs cli
+```bash
+$$ npm install -g @nestjs/cli
+$$ pnpm install -g @nestjs/cli
+```
+
+## View nest version
+```bash
+nest -v
+```
+
+## Create a new nestjs project
+```bash
+nest new <name of the project>
+```
+
+## Start server in production
+```bash
+npm start
+pnpm start
+```
+
+## Start server in development (--watch)
+```bash
+npm run start:dev
+pnpm run start:dev
+```
+
+## Build project (dist package)
+```bash
+npm run build
+pnpm run build
+```
+
+## Check with eslint
+```bash
+npm run lint
+pnpm run lint
+```
+
+## Generate service, controller and module with spec testing
+```bash
+nest g s <entity_name>
+nest g co <entity_name>
+nest g mo <entity_name>
+```
+
+## Generate just service, controller and module
+```bash
+nest g s <entity_name> --no-spec
+nest g co <entity_name> --no-spec
+nest g mo <entity_name> --no-spec
+```
