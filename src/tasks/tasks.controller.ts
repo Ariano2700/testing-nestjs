@@ -9,9 +9,12 @@ import {
   Put,
   Query,
 } from '@nestjs/common';
-import { TaskType, TasksService } from './tasks.service';
+import { TasksService } from './tasks.service';
+import { CreateTaskDto } from './dto/create-tasks.dto';
+import { ApiOperation, ApiTags } from '@nestjs/swagger';
 
 @Controller('/tasks')
+@ApiTags('tasks')
 export class TasksController {
   //   tasksService: TasksService;
 
@@ -21,32 +24,38 @@ export class TasksController {
   constructor(private tasksService: TasksService) {}
 
   @Get()
+  @ApiOperation({summary:"Get all tasks"})
   getAllTasks(@Query() query: any) {
     console.log(query);
     return this.tasksService.getTasks();
   }
 
   @Get('/:id')
-  getTask(@Param("id") id: string) {
+  @ApiOperation({summary:"Get task by id"})
+  getTask(@Param('id') id: string) {
     return this.tasksService.getTask(parseInt(id));
   }
 
   @Post()
-  createTask(@Body() tasks: TaskType) {
+  @ApiOperation({summary:"Create a tasks"})
+  createTask(@Body() tasks: CreateTaskDto) {
     return this.tasksService.createTasks(tasks);
   }
 
   @Put()
+  @ApiOperation({summary:"Update a task"})
   updateTask() {
     return this.tasksService.updateTasks();
   }
 
   @Delete()
+  @ApiOperation({summary:"Delete a task"})
   DeleteTask() {
     return this.tasksService.deleteTasks();
   }
 
   @Patch('/tasks')
+  @ApiOperation({summary:"Update status of a tasks"})
   updateTaskStatus() {
     return this.tasksService.updateTasksStatus();
   }
