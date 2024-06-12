@@ -75,8 +75,8 @@ Nest is [MIT licensed](LICENSE).
 ## Install nestjs cli
 
 ```bash
-$$ npm install -g @nestjs/cli
-$$ pnpm install -g @nestjs/cli
+$ npm install -g @nestjs/cli
+$ pnpm install -g @nestjs/cli
 ```
 
 ## View nest version
@@ -108,8 +108,8 @@ pnpx prisma init
 ## Using the built-in ValidationPipe
 
 ```bash
-$$ npm i --save class-validator class-transformer
-$$ pnpm i --save class-validator class-transformer
+$ npm i --save class-validator class-transformer
+$ pnpm i --save class-validator class-transformer
 ```
 
 ## Start server in production
@@ -191,10 +191,10 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 
 ```bash
 const config = new DocumentBuilder()
-    .setTitle('Cats example')
-    .setDescription('The cats API description')
+    .setTitle('')
+    .setDescription('')
     .setVersion('1.0')
-    .addTag('cats')
+    .addTag('')
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
